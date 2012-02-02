@@ -12,6 +12,10 @@ class Python24 < Formula
   # skip lib because it is mostly Python files
   skip_clean ['bin', 'lib']
 
+  def patches
+    {:p0 => ["https://raw.github.com/collective/buildout.python/abc4207c67/src/python-2.4-darwin-10.6.patch"]}
+  end
+
   def prefix_site_packages
     # The HOMEBREW_PREFIX location of site-packages
     HOMEBREW_PREFIX + "lib/python2.4/site-packages"
